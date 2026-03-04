@@ -1,17 +1,17 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
-    --color-neon-clock: #10b981;
-    --color-neon-stopwatch: #3b82f6;
-    --color-neon-timer: #f59e0b;
+  --color-neon-clock: #10b981;
+  --color-neon-stopwatch: #3b82f6;
+  --color-neon-timer: #f59e0b;
 }
 
 @layer base {
-    body {
-        @apply bg-zinc-950 text-zinc-50 antialiased selection:bg-emerald-500/30;
-    }
+  body {
+    @apply bg-zinc-950 text-zinc-50 antialiased selection:bg-emerald-500/30;
+  }
 }
 
 .neon-shadow {
-    box-shadow: 0 0 60px -15px rgba(16, 185, 129, 0.2);
+  box-shadow: 0 0 60px -15px rgba(16, 185, 129, 0.2);
 }

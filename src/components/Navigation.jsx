@@ -30,7 +30,7 @@ const Navigation = () => {
         </button>
 
         <ul className={`nav-menu ${isOpen ? 'open' : ''}`}>
-          {navItems.map((item) => (
+          {navItems.map(item => (
             <li key={item.path}>
               <Link
                 to={item.path}
@@ -48,7 +48,7 @@ const Navigation = () => {
         .navigation {
           background: #1a1a2e;
           padding: 1rem 2rem;
-          box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         .nav-container {

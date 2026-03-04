@@ -10,7 +10,7 @@ function formatTime(date: Date): string {
     hour12: false,
     hour: '2-digit',
     minute: '2-digit',
-    second: '2-digit'
+    second: '2-digit',
   });
 }
 
@@ -19,7 +19,7 @@ function formatDate(date: Date): string {
     weekday: 'long',
     year: 'numeric',
     month: 'long',
-    day: 'numeric'
+    day: 'numeric',
   });
 }
 
@@ -136,7 +136,10 @@ function App() {
 
   return (
     <div className="min-h-screen bg-black flex flex-col items-center justify-center p-6 font-mono">
-      <div className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none overflow-hidden" aria-hidden="true">
+      <div
+        className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none overflow-hidden"
+        aria-hidden="true"
+      >
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-emerald-500/20 rounded-full blur-[120px]" />
       </div>
 
@@ -177,7 +180,9 @@ function App() {
               role="tabpanel"
               aria-labelledby="clock-mode"
             >
-              <h2 id="clock-mode" className="sr-only">Clock Mode</h2>
+              <h2 id="clock-mode" className="sr-only">
+                Clock Mode
+              </h2>
               <time
                 id="current-time"
                 className="text-8xl md:text-[10rem] font-black text-emerald-400 tracking-tighter leading-none drop-shadow-[0_0_60px_rgba(16,185,129,0.5)]"
@@ -201,7 +206,9 @@ function App() {
               role="tabpanel"
               aria-labelledby="stopwatch-mode"
             >
-              <h2 id="stopwatch-mode" className="sr-only">Stopwatch Mode</h2>
+              <h2 id="stopwatch-mode" className="sr-only">
+                Stopwatch Mode
+              </h2>
               <div
                 className="text-8xl md:text-9xl font-black text-blue-400 tracking-tighter uppercase whitespace-nowrap"
                 role="timer"
@@ -237,7 +244,9 @@ function App() {
               role="tabpanel"
               aria-labelledby="timer-mode"
             >
-              <h2 id="timer-mode" className="sr-only">Timer Mode</h2>
+              <h2 id="timer-mode" className="sr-only">
+                Timer Mode
+              </h2>
               <div
                 className="text-8xl md:text-9xl font-black text-amber-400 tracking-tighter"
                 role="timer"
@@ -249,15 +258,17 @@ function App() {
 
               {!isRunning && (
                 <div className="space-y-4">
-                  <label htmlFor="timer-input" className="sr-only">Set timer duration in seconds</label>
+                  <label htmlFor="timer-input" className="sr-only">
+                    Set timer duration in seconds
+                  </label>
                   <input
                     id="timer-input"
                     type="text"
                     inputMode="numeric"
                     value={timerInput}
-                    onChange={(e) => handleTimerInputChange(e.target.value)}
+                    onChange={e => handleTimerInputChange(e.target.value)}
                     onBlur={setTimerFromInput}
-                    onKeyDown={(e) => {
+                    onKeyDown={e => {
                       if (e.key === 'Enter') {
                         setTimerFromInput();
                         e.currentTarget.blur();
@@ -265,7 +276,7 @@ function App() {
                     }}
                     className="bg-zinc-800 border border-zinc-700 rounded-xl px-4 py-2 text-2xl text-amber-400 font-bold text-center w-40 focus:outline-none focus:ring-2 focus:ring-amber-500/50"
                     placeholder="60"
-                    aria-describedby={inputError ? "timer-error" : undefined}
+                    aria-describedby={inputError ? 'timer-error' : undefined}
                     aria-invalid={!!inputError}
                   />
                   {inputError && (
@@ -310,28 +321,51 @@ function App() {
   );
 }
 
-function ModeBtn({ icon, active, onClick, label }: { icon: React.ReactNode; active: boolean; onClick: () => void; label: string }) {
+function ModeBtn({
+  icon,
+  active,
+  onClick,
+  label,
+}: {
+  icon: React.ReactNode;
+  active: boolean;
+  onClick: () => void;
+  label: string;
+}) {
   return (
     <button
       onClick={onClick}
       role="tab"
       aria-selected={active}
       aria-label={label}
-      className={`p-4 rounded-2xl transition-all ${active
-        ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20'
-        : 'text-zinc-600 hover:text-zinc-300'
-        }`}
+      className={`p-4 rounded-2xl transition-all ${
+        active
+          ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20'
+          : 'text-zinc-600 hover:text-zinc-300'
+      }`}
     >
       {icon}
     </button>
   );
 }
 
-function ActionBtn({ icon, onClick, color, label, disabled }: { icon: React.ReactNode; onClick: () => void; color: string; label: string; disabled?: boolean }) {
+function ActionBtn({
+  icon,
+  onClick,
+  color,
+  label,
+  disabled,
+}: {
+  icon: React.ReactNode;
+  onClick: () => void;
+  color: string;
+  label: string;
+  disabled?: boolean;
+}) {
   const colors: Record<string, string> = {
     blue: 'bg-blue-500 hover:bg-blue-600 shadow-blue-500/20',
     amber: 'bg-amber-500 hover:bg-amber-600 shadow-amber-500/20',
-    zinc: 'bg-zinc-700 hover:bg-zinc-600 shadow-zinc-500/20'
+    zinc: 'bg-zinc-700 hover:bg-zinc-600 shadow-zinc-500/20',
   };
 
   return (
