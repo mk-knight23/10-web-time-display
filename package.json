@@ -5,6 +5,7 @@
   "description": "Glassmorphic neon digital clock with React 19, Vite 6, Tailwind CSS v4, and native Date API. Features clock, stopwatch, and timer modes with full accessibility support.",
   "type": "module",
   "scripts": {
+    "production": "npm run build && npm start",
     "lint": "eslint .",
     "dev": "vite",
     "build": "tsc && vite build",
