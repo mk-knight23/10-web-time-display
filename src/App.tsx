@@ -314,7 +314,7 @@ function App() {
             <Globe className="w-3 h-3" aria-hidden="true" />
             <span>LOCAL TIMEZONE: {Intl.DateTimeFormat().resolvedOptions().timeZone}</span>
           </div>
-          <p>© 2026 Neon Chronos by Musharraf Kazi • Free & open-source</p>
+          <p>© 2026 MK TimeGrid by Qazi Musharof • Free & open-source</p>
         </div>
       </motion.div>
     </div>
