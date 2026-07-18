@@ -140,13 +140,13 @@ function App() {
         className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none overflow-hidden"
         aria-hidden="true"
       >
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-emerald-500/20 rounded-full blur-[120px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-500/20 rounded-full blur-[120px]" />
       </div>
 
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="relative z-10 w-full max-w-2xl bg-zinc-900/50 backdrop-blur-xl border border-zinc-800 p-12 rounded-[3rem] text-center neon-shadow"
+        className="relative z-10 w-full max-w-2xl bg-white/30 backdrop-blur-lg backdrop-blur-xl border border-white/30 p-12 rounded-[3rem] text-center neon-shadow"
       >
         <div className="flex justify-center gap-4 mb-12" role="tablist" aria-label="Clock modes">
           <ModeBtn
@@ -185,12 +185,12 @@ function App() {
               </h2>
               <time
                 id="current-time"
-                className="text-8xl md:text-[10rem] font-black text-emerald-400 tracking-tighter leading-none drop-shadow-[0_0_60px_rgba(16,185,129,0.5)]"
+                className="text-8xl md:text-[10rem] font-black text-indigo-600 tracking-tighter leading-none drop-shadow-[0_0_60px_rgba(16,185,129,0.5)]"
                 dateTime={time.toISOString()}
               >
                 {formatTime(time)}
               </time>
-              <p className="text-lg text-emerald-500/50 font-bold tracking-[0.3em] uppercase">
+              <p className="text-lg text-indigo-500/50 font-bold tracking-[0.3em] uppercase">
                 {formatDate(time)}
               </p>
             </motion.div>
@@ -274,7 +274,7 @@ function App() {
                         e.currentTarget.blur();
                       }
                     }}
-                    className="bg-zinc-800 border border-zinc-700 rounded-xl px-4 py-2 text-2xl text-amber-400 font-bold text-center w-40 focus:outline-none focus:ring-2 focus:ring-amber-500/50"
+                    className="bg-white/35 backdrop-blur-lg border border-white/25 rounded-xl px-4 py-2 text-2xl text-amber-400 font-bold text-center w-40 focus:outline-none focus:ring-2 focus:ring-amber-500/50"
                     placeholder="60"
                     aria-describedby={inputError ? 'timer-error' : undefined}
                     aria-invalid={!!inputError}
@@ -309,7 +309,7 @@ function App() {
           )}
         </AnimatePresence>
 
-        <div className="mt-16 pt-8 border-t border-zinc-800 flex justify-between items-center text-zinc-500 text-xs">
+        <div className="mt-16 pt-8 border-t border-white/30 flex justify-between items-center text-slate-8000 text-xs">
           <div className="flex items-center gap-2">
             <Globe className="w-3 h-3" aria-hidden="true" />
             <span>LOCAL TIMEZONE: {Intl.DateTimeFormat().resolvedOptions().timeZone}</span>
@@ -340,8 +340,8 @@ function ModeBtn({
       aria-label={label}
       className={`p-4 rounded-2xl transition-all ${
         active
-          ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20'
-          : 'text-zinc-600 hover:text-zinc-300'
+          ? 'bg-indigo-500/10 text-indigo-600 border border-emerald-500/20'
+          : 'text-zinc-600 hover:text-slate-600'
       }`}
     >
       {icon}
@@ -373,7 +373,7 @@ function ActionBtn({
       onClick={onClick}
       disabled={disabled}
       aria-label={label}
-      className={`w-16 h-16 rounded-full flex items-center justify-center text-white transition-all shadow-xl active:scale-90 disabled:opacity-50 disabled:cursor-not-allowed ${colors[color]}`}
+      className={`w-16 h-16 rounded-full flex items-center justify-center text-slate-800 transition-all shadow-xl active:scale-90 disabled:opacity-50 disabled:cursor-not-allowed ${colors[color]}`}
     >
       {icon}
     </button>
