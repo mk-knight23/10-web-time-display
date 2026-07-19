@@ -148,6 +148,13 @@ function App() {
         animate={{ opacity: 1, scale: 1 }}
         className="relative z-10 w-full max-w-2xl bg-white/30 backdrop-blur-lg backdrop-blur-xl border border-white/30 p-12 rounded-[3rem] text-center neon-shadow"
       >
+        <div className="text-center mb-8 flex flex-col items-center gap-2">
+          <span className="font-display font-black text-2xl tracking-tighter uppercase italic text-slate-800 dark:text-white" style={{ fontFamily: "'Inter', sans-serif" }}>
+            MK_<span className="text-indigo-600">TimeGrid</span>
+          </span>
+          <span className="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Premium Timepiece & Scheduler</span>
+        </div>
+
         <div className="flex justify-center gap-4 mb-12" role="tablist" aria-label="Clock modes">
           <ModeBtn
             icon={<Clock className="w-5 h-5" />}
@@ -314,7 +321,7 @@ function App() {
             <Globe className="w-3 h-3" aria-hidden="true" />
             <span>LOCAL TIMEZONE: {Intl.DateTimeFormat().resolvedOptions().timeZone}</span>
           </div>
-          <p>© 2026 MK TimeGrid by Qazi Musharof • Free & open-source</p>
+          <p>© 2026 <a href="https://www.mkazi.live" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition-colors underline font-medium">Qazi Musharof — Kazi Developer</a>. All rights reserved. Free & open-source.</p>
         </div>
       </motion.div>
     </div>
